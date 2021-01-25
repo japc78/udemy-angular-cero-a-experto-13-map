@@ -1,7 +1,7 @@
 
 export class Marker {
     public title = 'Without title';
-    public desc = 'Description';
+    public desc = 'Here your Description';
 
     constructor(
         public lat: number,

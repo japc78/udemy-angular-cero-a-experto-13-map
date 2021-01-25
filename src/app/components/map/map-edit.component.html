@@ -1,0 +1,15 @@
+<form [formGroup]="customForm">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Title" formControlName="title" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea rows="3" matInput placeholder="Description" formControlName="desc"></textarea>
+  </mat-form-field>
+
+  <button (click)="saveChanges()" mat-raised-button color="primary">Editar</button>
+  <button (click)="onNoClick()" mat-raised-button color="warn">Cancel</button>
+
+</form>
