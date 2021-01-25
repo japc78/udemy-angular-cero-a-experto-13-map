@@ -5,7 +5,7 @@
         [latitude]="lat"
         [longitude]="lng">
         <agm-marker
-            *ngFor="let marker of markers"
+            *ngFor="let marker of markers; let idx = index"
             [latitude]="marker.lat"
             [longitude]="marker.lng">
             <agm-info-window>
@@ -13,7 +13,7 @@
                 <p>{{ marker.desc }}</p>
                 <div>
                     <button mat-raised-button color="primary">Editar</button>
-                    <button mat-raised-button color="warn">Borrar</button>
+                    <button (click)="delMarker(idx)" mat-raised-button color="warn">Borrar</button>
                 </div>
             </agm-info-window>
         </agm-marker>

@@ -17,6 +17,7 @@ export class MapComponent implements OnInit {
     // const newMarker = new Marker(51.678418 , 7.809007);
     // this.markers.push(newMarker);
 
+    // Leer los marcadores
     if (localStorage.getItem('markers')) {
       this.markers = JSON.parse(localStorage.getItem('markers'));
     }
@@ -33,7 +34,13 @@ export class MapComponent implements OnInit {
     this.saveAtLocalStorage();
   }
 
+  delMarker(idx: number ): void {
+    this.markers.splice(idx, 1);
+    this.saveAtLocalStorage();
+  }
+
   private saveAtLocalStorage(): void {
     localStorage.setItem('markers', JSON.stringify(this.markers));
   }
+
 }
